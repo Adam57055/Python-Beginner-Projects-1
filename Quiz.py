@@ -1,3 +1,4 @@
+#list of questions program will choose from
 quiz = {
     "question1": {
         "question": "What is the Capital City of Afghanistan?",
@@ -20,17 +21,19 @@ quiz = {
         "city": "Andorra la Vella"
     },
 }
-score = 0
-for key, value in quiz.items():
+score = 0 #player's 'score' variable is stored
+
+#question is outputted
+for key, value in quiz.items(): 
     print(value['question'])
     answer = input('Answer: ')
     ans = value['city']
-
-    if answer.lower() == value['city'].lower():
+#if question is answered correctly
+    if answer.lower() == value['city'].lower(): 
         print('You Are Correct.')
         score += 1
         print(f'Your Score is: {score}.')
+    #if question is answered incorrectly
     else:
         print(f'You are Wrong. The answer is {ans}.')
-print(f'You got {score} out of 5. Your percentage is {score/5*100}%.')
-
+print(f'You got {score} out of 5. Your percentage is {score/5*100}%.') #score is outputted
